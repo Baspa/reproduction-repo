@@ -16,9 +16,11 @@
     "require": {
         "php": "^8.2",
         "filament/filament": "^3.2",
+        "laravel/fortify": "^1.24",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
-        "timokoerber/laravel-one-time-operations": "^1.4"
+        "timokoerber/laravel-one-time-operations": "^1.4",
+        "vormkracht10/filament-2fa": "^1.6"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",

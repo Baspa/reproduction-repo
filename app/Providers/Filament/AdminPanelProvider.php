@@ -19,6 +19,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Vormkracht10\TwoFactorAuth\TwoFactorAuthPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -30,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(Login::class)
             ->sidebarCollapsibleOnDesktop()
-//            ->sidebarFullyCollapsibleOnDesktop()
+            //            ->sidebarFullyCollapsibleOnDesktop()
             ->spa()
             ->profile(Profile::class, false)
             ->viteTheme('resources/css/filament/admin/theme.css')
@@ -49,6 +50,7 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
+            ->plugin(TwoFactorAuthPlugin::make())
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
